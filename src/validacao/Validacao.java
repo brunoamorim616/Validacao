@@ -9,7 +9,7 @@ public class Validacao {
         
         //Define atributos da TELA
         janela.setDefaultCloseOperation(janela.EXIT_ON_CLOSE);
-        janela.setSize(400, 320);
+        janela.setSize(614, 559);
         janela.add(painelCadastro);
         janela.setVisible(true); 
     }

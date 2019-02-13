@@ -8,6 +8,9 @@ package validacao;
 import br.com.caelum.stella.validation.CNPJValidator;
 import br.com.caelum.stella.validation.CPFValidator;
 import br.com.caelum.stella.validation.InvalidStateException;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,9 +24,33 @@ public class CadastroClientes extends javax.swing.JPanel {
      */
     public CadastroClientes() {
         initComponents();
-        comboUF.addItem("Masculino");
-        comboUF.addItem("Feminino");
-        comboUF.addItem("Outro");
+        comboUF.addItem("AC");
+        comboUF.addItem("AL");
+        comboUF.addItem("AP");
+        comboUF.addItem("AM");
+        comboUF.addItem("BA");
+        comboUF.addItem("CE");
+        comboUF.addItem("DF");
+        comboUF.addItem("ES");
+        comboUF.addItem("GO");
+        comboUF.addItem("MA");
+        comboUF.addItem("MT");
+        comboUF.addItem("MS");
+        comboUF.addItem("MG");
+        comboUF.addItem("PA");
+        comboUF.addItem("PB");
+        comboUF.addItem("PR");
+        comboUF.addItem("PE");
+        comboUF.addItem("PI");
+        comboUF.addItem("RJ");
+        comboUF.addItem("RN");
+        comboUF.addItem("RS");
+        comboUF.addItem("RO");
+        comboUF.addItem("RR");
+        comboUF.addItem("SC");
+        comboUF.addItem("SP");
+        comboUF.addItem("SE");
+        comboUF.addItem("TO");
     }
 
     /**
@@ -344,94 +371,99 @@ public class CadastroClientes extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(201, 201, 201)
-                .addComponent(lbCadastro))
-            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lbNome)
+                        .addGap(4, 4, 4)
+                        .addComponent(cpNome, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(4, 4, 4)
+                        .addComponent(lbCelular)
+                        .addGap(6, 6, 6)
+                        .addComponent(cpCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(4, 4, 4)
+                        .addComponent(lbTelefone)
+                        .addGap(4, 4, 4)
+                        .addComponent(cpTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lbUF)
+                        .addGap(4, 4, 4)
+                        .addComponent(comboUF, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(4, 4, 4)
+                        .addComponent(lbCidade)
+                        .addGap(4, 4, 4)
+                        .addComponent(cpCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(lbBairro)
+                        .addGap(4, 4, 4)
+                        .addComponent(cpBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lbEndereco)
+                        .addGap(4, 4, 4)
+                        .addComponent(cpEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lbNomeResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(4, 4, 4)
+                        .addComponent(cpNomeResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(4, 4, 4)
+                        .addComponent(lbCPFresponsavel)
+                        .addGap(4, 4, 4)
+                        .addComponent(cpCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lbCelularResponsavel)
+                        .addGap(4, 4, 4)
+                        .addComponent(cpCelularResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(4, 4, 4)
+                        .addComponent(lbRenda)
+                        .addGap(4, 4, 4)
+                        .addComponent(cpRenda, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lbInstagram)
+                        .addGap(4, 4, 4)
+                        .addComponent(cpInstagram, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lbFacebook, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(4, 4, 4)
+                        .addComponent(cpFacebook, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(230, 230, 230)
+                        .addComponent(btSalvar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lbCEP)
+                                .addGap(4, 4, 4)
+                                .addComponent(cpCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(4, 4, 4)
+                                .addComponent(lbCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cpCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lbEmail)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cpEmail))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lbInscricaoEstadual)
+                                .addGap(4, 4, 4)
+                                .addComponent(cpInscricaoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(4, 4, 4)
+                                .addComponent(lbDataInscricao)
+                                .addGap(4, 4, 4)
+                                .addComponent(cpDataInscricao, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(lbNome)
-                .addGap(4, 4, 4)
-                .addComponent(cpNome, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addComponent(lbCelular)
-                .addGap(6, 6, 6)
-                .addComponent(cpCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addComponent(lbTelefone)
-                .addGap(4, 4, 4)
-                .addComponent(cpTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(lbUF)
-                .addGap(4, 4, 4)
-                .addComponent(comboUF, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addComponent(lbCidade)
-                .addGap(4, 4, 4)
-                .addComponent(cpCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(lbBairro)
-                .addGap(4, 4, 4)
-                .addComponent(cpBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(lbEndereco)
-                .addGap(4, 4, 4)
-                .addComponent(cpEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(lbCEP)
-                .addGap(4, 4, 4)
-                .addComponent(cpCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addComponent(lbCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cpCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbEmail)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cpEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(lbInscricaoEstadual)
-                .addGap(4, 4, 4)
-                .addComponent(cpInscricaoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addComponent(lbDataInscricao)
-                .addGap(4, 4, 4)
-                .addComponent(cpDataInscricao, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(lbNomeResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addComponent(cpNomeResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addComponent(lbCPFresponsavel)
-                .addGap(4, 4, 4)
-                .addComponent(cpCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(lbCelularResponsavel)
-                .addGap(4, 4, 4)
-                .addComponent(cpCelularResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addComponent(lbRenda)
-                .addGap(4, 4, 4)
-                .addComponent(cpRenda, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(lbInstagram)
-                .addGap(4, 4, 4)
-                .addComponent(cpInstagram, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(lbFacebook, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addComponent(cpFacebook, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(230, 230, 230)
-                .addComponent(btSalvar))
+                .addGap(174, 174, 174)
+                .addComponent(lbCadastro)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -527,14 +559,44 @@ public class CadastroClientes extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(cpFacebook, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(43, 43, 43)
-                .addComponent(btSalvar))
+                .addGap(18, 18, 18)
+                .addComponent(btSalvar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
+        ManipulacaoDeArquivos manip = new ManipulacaoDeArquivos("validacao", "salvo.doc");
+        EmailWrapper enviar = new EmailWrapper();
+        String mensagem;
+        
+        mensagem  = "Empresa: "+cpNome.getText()+"\n"+
+                "CNPJ: "+cpCNPJ.getText()+"\n"+
+                "Inscrição estadual: "+cpInscricaoEstadual.getText()+"\n"+
+                "Data de cadastro: "+cpDataInscricao.getText()+"\n\n"+
+                "Estado: "+comboUF.getSelectedItem()+"\n"+
+                "Cidade: "+cpCidade.getText()+"\n"+
+                "CEP: "+cpCEP.getText()+"\n"+
+                "Bairro: "+cpBairro.getText()+"\n"+
+                "Endereço: "+cpEndereco.getText()+"\n\n"+
+                "E-mail: "+cpEmail.getText()+"\n"+
+                "Telefone: "+cpTelefone.getText()+"\n"+
+                "Celular: "+cpCelular.getText()+"\n"+
+                "Responsável: "+cpNomeResponsavel.getText()+"\n"+
+                "CPF do Responsável: "+cpCPF.getText()+"\n"+
+                "Celular do Responsável: "+cpCelularResponsavel.getText()+"\n"+
+                "Renda: "+cpRenda.getText()+"\n"+
+                "Redes Sociais: "+cpInstagram.getText()+"\n"+"               "+cpFacebook.getText();
         if (this.validarCampo()) {
             JOptionPane.showMessageDialog(null, "Capos preenchidos corretamente");
+            try {               
+                manip.sobreEscrever(mensagem);
+                enviar.enviar("bruno_amorim1@estudante.sc.senai.br", "bruno_amorim1@estudante.sc.senai.br", "Mensagem", mensagem);
+                JOptionPane.showMessageDialog(null, "Salvo e Enviado");
+            } catch (IOException ex) {
+                Logger.getLogger(CadastroClientes.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, "Erro na gravação e no envio");
+            }
         }
     }//GEN-LAST:event_btSalvarActionPerformed
 
